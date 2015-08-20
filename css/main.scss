@@ -54,18 +54,19 @@ body .limiter {
 
 /* Projects */
 
-.project {
-  display: flex; align-items: center;
-  margin: 60px 0;
-}
+// .project {
+//   display: flex; align-items: center;
+//   margin: 60px 0;
+// }
 
-.project .about {
-  flex: 1;
-}
+// .project .about {
+//   flex: 1;
+// }
 
 .project .image {
-  flex: 1;
-  padding: 20px;
+  // flex: 1;
+  // padding: 20px;
+  margin: 40px 0;
 
   img {
     width: 100%;
@@ -81,7 +82,7 @@ body .limiter {
 /* Team */
 
 .team-member {
-  display: flex; align-items: flex-start;
+  display: flex; align-items: center;
   margin: 50px 0;
 
   .name {
