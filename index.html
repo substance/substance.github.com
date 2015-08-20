@@ -3,26 +3,32 @@ layout: default
 ---
 
 <div class="home">
-  <p class="large">Substance is an open source <a href="http://github.com/substance/substance">JavaScript library</a> for web-based content editing. Build simple text editors or full-featured publishing systems — Substance provides the building blocks you need.</p>
+  <p class="intro">A <a href="http://github.com/substance/substance">JavaScript library</a> for web-based content editing. <!--Build simple text editors or full-featured publishing systems — Substance provides the building blocks you need.--></p>
+
+  <!-- <div class="navigation">
+    <a class="nav-item" href="#">Showcases</a>
+    <a class="nav-item" href="#">Publications</a>
+    <a class="nav-item" href="#">About us</a>
+  </div> -->
   
   <!-- This should be made editable on desktop using Substance HTML Editor -->
-  <div class="demo">
-    <p>
-      <strong>Custom document models:</strong> Define a custom article schema, by including common content types, such as paragraphs and headings and defining custom elements.
-    </p>
-    <p>
-      <strong>Building blocks for custom editors:</strong> Use ready-made UI components to build your very own web-based document editor.
-    </p>
-    <p>
-      <strong>Operation based manipulation:</strong> Substance documents are manipulated with operations that can be undone, redone and distributed over a network for concurrent manipulations (collaborative editing)
-    </p>
-    <p>
-      <strong>HTML/XML import export:</strong> Substance interacts well with HTML/XML content. E.g. you can import whole XML documents or insert HTML fragments from the clipboard.
-    </p>
-    <p>
-      <strong>Server and client-side execution:</strong> Substance runs in the browser and server-side environments, such as Node.js or io.js.
-    </p>
+
+  <div id="editor_container">
+    <p>Build simple text editors or full-featured publishing systems. Substance provides you building blocks for your very custom editor.</p>
+
+    <h2>Building blocks for custom editors</h2>
+    <p>Define a custom article schema, by including common content types, such as paragraphs and headings and defining custom elements. Use ready-made UI components to build your very own web-based document editor.</p>
+    <h2>Operation based manipulation</h2>
+    <p>Substance documents are manipulated with operations that can be undone, redone and distributed over a network for concurrent manipulations (collaborative editing)</p>
+    <h2>HTML/XML import export</h2>
+    <p>Substance interacts well with HTML/XML content. E.g. you can import whole XML documents or insert HTML fragments from the clipboard.</p>
+    <h2>Server and client-side execution</h2>
+    <p>Substance runs in the browser and server-side environments, such as Node.js or io.js.</p>
   </div>
+
+  <!--<div class="demo">
+
+  </div>-->
 
   <!-- Presentation of Substance projects -->
   <h2>Showcases</h2>
@@ -41,12 +47,12 @@ layout: default
   </div>
 
   <div class="project">
+    <div class="image">
+      <img src="images/lens.png"/>
+    </div>
     <div class="about">
       <h3>Archivist</h3>
       Substance Archivist is a new platform used by group of editors at Memorial Deutschland e.V. working on creating an archive of interview transcriptions related to the 2nd world war. Using archivist they annotate and link subjects, places, persons definitions. Later they are able to examine that data and find relevant text passages easily.
-    </div>
-    <div class="image">
-      <img src="images/lens.png"/>
     </div>
   </div>
 
@@ -62,7 +68,7 @@ layout: default
 
 
   <h2>Publications</h2>
-  <p>Here is a miscellaneous collection of publications, related to Substance and digital publishing in general.</p>
+  <p class="large">Here is a miscellaneous collection of publications, related to Substance and digital publishing in general.</p>
   <div class="publications">
     <div class="publication">
       <div class="title large"><a href="https://medium.com/@_mql/self-host-a-scientific-journal-with-elife-lens-f420afb678aa">Self-host a scientific journal with eLife Lens</a></div>
@@ -83,7 +89,7 @@ layout: default
   <div class="team-member">
     <div class="about">
       <div class="name">Michael Aufreiter <span class="position small">Co-Founder and Co-CEO</span></div>
-      <div class="description small">
+      <div class="description">
         Michael is the initiator of Substance. He coordinates the project and leads UI/UX development. He is a passionate open source commiter since many years. Notable projects include Prose, a visual interface for managing content on GitHub, eLife Lens and of course Substance. Find him on Twitter and Github.
       </div>
     </div>
@@ -94,7 +100,7 @@ layout: default
     
     <div class="about">
       <div class="name">Oliver Buchtala <span class="position small">Co-Founder and Co-CEO</span></div>
-      <div class="description small">
+      <div class="description">
         Oliver has worked in various fields of Computer Science. He loves and masters code generation, parsers and lately, Javascript. Back in 2010, he helped with the initial design of the Substance Document Model. Today he's involved in every aspect of development, with a focus on infrastructure and system architecture. Find him on Github.
       </div>
     </div>

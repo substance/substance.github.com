@@ -6,6 +6,7 @@
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
   "styles/index",
+  "styles/html_editor",
   "syntax-highlighting"
 ;
 
@@ -23,18 +24,20 @@ body .limiter {
   padding: 0px 15px;
 }
 
-.site-header {
-  padding: 50px 0;
-}
 
 .site-footer {
   padding: 50px 0;
 }
 
 .substance-header {
-  font-size: 34px;
+  font-size: 60px;
+  font-family: 'Josefin Sans';
   font-weight: 600;
   color: rgba(0,0,0,0.75);
+}
+
+.intro {
+  font-size: 24px;
 }
 
 .substance-header:hover {
@@ -53,7 +56,7 @@ body .limiter {
 
 .project {
   display: flex; align-items: center;
-  margin-bottom: 30px;
+  margin: 60px 0;
 }
 
 .project .about {
@@ -62,7 +65,7 @@ body .limiter {
 
 .project .image {
   flex: 1;
-  padding: 30px;
+  padding: 20px;
 
   img {
     width: 100%;
@@ -79,7 +82,7 @@ body .limiter {
 
 .team-member {
   display: flex; align-items: flex-start;
-  margin: 30px 0;
+  margin: 50px 0;
 
   .name {
     font-weight: 700;
@@ -103,8 +106,8 @@ body .limiter {
 
 body .site-header {
   display: flex; align-items: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 60px;
+  padding-bottom: 0px;
 }
 
 .container { display: flex; align-items: flex-start; }
@@ -113,7 +116,9 @@ body .site-header {
 
 /* Large */
 .navigation {
+
   display: flex;
+  // display: none;
   flex-flow: row wrap;
   /* This aligns items to the end line on main-axis */
   justify-content: flex-end;
@@ -124,13 +129,8 @@ body .site-header {
 }
 
 // Mobile-tweaks for the better Substance
-@media all and (max-width: 500px) {
+@media all and (max-width: 640px) {
 
-  .site-header {
-    flex-direction: column;
-    align-items: stretch;
-    text-align: center;
-  }
 
   .project {
     flex-direction: column;
@@ -146,3 +146,38 @@ body .site-header {
     margin-top: 40px;
   }
 }
+
+
+body {
+  // background: #fbf9f1;
+  background: #F3F3F3;
+}
+
+/* Editor component
+------------------------------------------------------- */
+
+.html-editor-component {
+  margin-top: 60px;
+  border: 1px solid #ddd;
+  background: white;
+  
+  color: #222;
+  position: relative;
+}
+
+.toolbar {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  top: 14px;
+  padding-bottom: 20px;
+  // border-bottom: 1px solid #eee;
+}
+
+.html-editor-component .container-node {
+  padding: 20px;
+  margin-top: 40px;
+  // max-height: 400px;
+  // overflow: auto;
+}
+
