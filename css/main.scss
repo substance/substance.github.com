@@ -1,0 +1,148 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+  "styles/index",
+  "syntax-highlighting"
+;
+
+/* Page Layout
+-------------------------------------------------- */
+
+/* Substance base.css overrides */
+
+h2 {
+  margin-top: 40px;
+}
+
+body .limiter {
+  max-width: 800px;
+  padding: 0px 15px;
+}
+
+.site-header {
+  padding: 50px 0;
+}
+
+.site-footer {
+  padding: 50px 0;
+}
+
+.substance-header {
+  font-size: 34px;
+  font-weight: 600;
+  color: rgba(0,0,0,0.75);
+}
+
+.substance-header:hover {
+  color: rgba(0,0,0,0.75);
+}
+
+/* Demo styles */
+
+.demo {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* Projects */
+
+.project {
+  display: flex; align-items: center;
+  margin-bottom: 30px;
+}
+
+.project .about {
+  flex: 1;
+}
+
+.project .image {
+  flex: 1;
+  padding: 30px;
+
+  img {
+    width: 100%;
+  }
+}
+
+/* Publications */
+
+.publication {
+  padding: 10px 0;
+}
+
+/* Team */
+
+.team-member {
+  display: flex; align-items: flex-start;
+  margin: 30px 0;
+
+  .name {
+    font-weight: 700;
+  }
+
+  .position {
+    color: #999;
+    padding-left: 10px;
+  }
+
+  .image {
+    width: 200px;
+    padding: 10px;
+
+    img {
+      border-radius: 50%;
+      width: 100%;
+    }
+  }
+}
+
+body .site-header {
+  display: flex; align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.container { display: flex; align-items: flex-start; }
+.stretch { flex: 1; }
+
+
+/* Large */
+.navigation {
+  display: flex;
+  flex-flow: row wrap;
+  /* This aligns items to the end line on main-axis */
+  justify-content: flex-end;
+
+  .nav-item {
+    padding: 2px 5px;
+  }
+}
+
+// Mobile-tweaks for the better Substance
+@media all and (max-width: 500px) {
+
+  .site-header {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .project {
+    flex-direction: column;
+  }
+
+  .team-member .image {
+    display: none;
+  }
+
+  .navigation {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+    margin-top: 40px;
+  }
+}
