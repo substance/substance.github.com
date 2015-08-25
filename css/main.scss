@@ -6,6 +6,7 @@
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
   "styles/index",
+  "styles/editor",
   "syntax-highlighting"
 ;
 
@@ -23,23 +24,59 @@ body .limiter {
   padding: 0px 15px;
 }
 
-.site-header {
-  padding: 50px 0;
-}
-
 .site-footer {
   padding: 50px 0;
+  color: rgba(255,255,255,0.7);
+
+  a {
+    color: white;
+
+    &:hover {
+      border-bottom: 1px solid #fff;
+    }
+  }
 }
 
 .substance-header {
-  font-size: 34px;
+  font-size: 60px;
+  font-family: 'Josefin Sans';
   font-weight: 600;
-  color: rgba(0,0,0,0.75);
+  // color: rgba(0,0,0,0.75);
+  color: #fff;
 }
 
 .substance-header:hover {
-  color: rgba(0,0,0,0.75);
+  color: #fff;
 }
+
+.intro {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 24px;
+
+  a {
+    color: #fff;
+    
+    &:hover {
+      border-bottom: 1px solid #fff;
+    }
+  }
+}
+
+
+.editor-info {
+  color: rgba(255, 255, 255, 0.7);
+  // font-size: 24px;
+  padding: 10px 0;
+
+  a {
+    color: #fff;
+    
+    &:hover {
+      border-bottom: 1px solid #fff;
+    }
+  }
+}
+
 
 /* Demo styles */
 
@@ -49,20 +86,9 @@ body .limiter {
   margin-top: 40px;
 }
 
-/* Projects */
-
-.project {
-  display: flex; align-items: center;
-  margin-bottom: 30px;
-}
-
-.project .about {
-  flex: 1;
-}
 
 .project .image {
-  flex: 1;
-  padding: 30px;
+  margin: 40px 0;
 
   img {
     width: 100%;
@@ -78,8 +104,9 @@ body .limiter {
 /* Team */
 
 .team-member {
-  display: flex; align-items: flex-start;
-  margin: 30px 0;
+  // display: flex; align-items: center;
+  margin: 50px 0;
+  overflow: hidden;
 
   .name {
     font-weight: 700;
@@ -91,7 +118,8 @@ body .limiter {
   }
 
   .image {
-    width: 200px;
+    float: right;
+    width: 100px;
     padding: 10px;
 
     img {
@@ -102,9 +130,9 @@ body .limiter {
 }
 
 body .site-header {
-  display: flex; align-items: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  // display: flex; align-items: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .container { display: flex; align-items: flex-start; }
@@ -113,7 +141,9 @@ body .site-header {
 
 /* Large */
 .navigation {
+
   display: flex;
+  // display: none;
   flex-flow: row wrap;
   /* This aligns items to the end line on main-axis */
   justify-content: flex-end;
@@ -124,13 +154,8 @@ body .site-header {
 }
 
 // Mobile-tweaks for the better Substance
-@media all and (max-width: 500px) {
+@media all and (max-width: 640px) {
 
-  .site-header {
-    flex-direction: column;
-    align-items: stretch;
-    text-align: center;
-  }
 
   .project {
     flex-direction: column;
@@ -146,3 +171,53 @@ body .site-header {
     margin-top: 40px;
   }
 }
+
+
+body {
+  // background: #fbf9f1;
+  // background: #F0F1EB;;
+  // background: #272828;
+  // background: #303c40;
+  background: #5c6570;
+}
+
+// .site-header {
+//   background: #272828;
+// }
+
+.teaser {
+  // background: #272828;
+  padding-bottom: 60px;
+}
+
+.home {
+  padding-top: 30px;
+  padding-bottom: 80px;
+  background: #fff;
+}
+
+/* Editor component
+------------------------------------------------------- */
+
+.editor-component {
+  
+  border: 1px solid transparent;
+  background: white;
+  
+  color: #222;
+  position: relative;
+}
+
+.toolbar {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  top: 14px;
+  padding-bottom: 20px;
+}
+
+.editor-component .container-node {
+  padding: 20px;
+  margin-top: 65px;
+}
+
