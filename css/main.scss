@@ -6,7 +6,7 @@
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
   "styles/index",
-  "styles/html_editor",
+  "styles/editor",
   "syntax-highlighting"
 ;
 
@@ -24,25 +24,59 @@ body .limiter {
   padding: 0px 15px;
 }
 
-
 .site-footer {
   padding: 50px 0;
+  color: rgba(255,255,255,0.7);
+
+  a {
+    color: white;
+
+    &:hover {
+      border-bottom: 1px solid #fff;
+    }
+  }
 }
 
 .substance-header {
   font-size: 60px;
   font-family: 'Josefin Sans';
   font-weight: 600;
-  color: rgba(0,0,0,0.75);
-}
-
-.intro {
-  font-size: 24px;
+  // color: rgba(0,0,0,0.75);
+  color: #fff;
 }
 
 .substance-header:hover {
-  color: rgba(0,0,0,0.75);
+  color: #fff;
 }
+
+.intro {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 24px;
+
+  a {
+    color: #fff;
+    
+    &:hover {
+      border-bottom: 1px solid #fff;
+    }
+  }
+}
+
+
+.editor-info {
+  color: rgba(255, 255, 255, 0.7);
+  // font-size: 24px;
+  padding: 10px 0;
+
+  a {
+    color: #fff;
+    
+    &:hover {
+      border-bottom: 1px solid #fff;
+    }
+  }
+}
+
 
 /* Demo styles */
 
@@ -52,20 +86,8 @@ body .limiter {
   margin-top: 40px;
 }
 
-/* Projects */
-
-// .project {
-//   display: flex; align-items: center;
-//   margin: 60px 0;
-// }
-
-// .project .about {
-//   flex: 1;
-// }
 
 .project .image {
-  // flex: 1;
-  // padding: 20px;
   margin: 40px 0;
 
   img {
@@ -82,8 +104,9 @@ body .limiter {
 /* Team */
 
 .team-member {
-  display: flex; align-items: center;
+  // display: flex; align-items: center;
   margin: 50px 0;
+  overflow: hidden;
 
   .name {
     font-weight: 700;
@@ -95,7 +118,8 @@ body .limiter {
   }
 
   .image {
-    width: 200px;
+    float: right;
+    width: 100px;
     padding: 10px;
 
     img {
@@ -106,9 +130,9 @@ body .limiter {
 }
 
 body .site-header {
-  display: flex; align-items: center;
+  // display: flex; align-items: center;
   padding-top: 60px;
-  padding-bottom: 0px;
+  padding-bottom: 60px;
 }
 
 .container { display: flex; align-items: flex-start; }
@@ -151,15 +175,33 @@ body .site-header {
 
 body {
   // background: #fbf9f1;
-  background: #F3F3F3;
+  // background: #F0F1EB;;
+  // background: #272828;
+  // background: #303c40;
+  background: #5c6570;
+}
+
+// .site-header {
+//   background: #272828;
+// }
+
+.teaser {
+  // background: #272828;
+  padding-bottom: 60px;
+}
+
+.home {
+  padding-top: 30px;
+  padding-bottom: 80px;
+  background: #fff;
 }
 
 /* Editor component
 ------------------------------------------------------- */
 
-.html-editor-component {
-  margin-top: 60px;
-  border: 1px solid #ddd;
+.editor-component {
+  
+  border: 1px solid transparent;
   background: white;
   
   color: #222;
@@ -172,13 +214,10 @@ body {
   right: 14px;
   top: 14px;
   padding-bottom: 20px;
-  // border-bottom: 1px solid #eee;
 }
 
-.html-editor-component .container-node {
+.editor-component .container-node {
   padding: 20px;
-  margin-top: 40px;
-  // max-height: 400px;
-  // overflow: auto;
+  margin-top: 65px;
 }
 
