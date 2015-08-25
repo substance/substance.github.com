@@ -66,7 +66,7 @@ body .limiter {
 .editor-info {
   color: rgba(255, 255, 255, 0.7);
   // font-size: 24px;
-  padding: 10px 0;
+  padding: 15px 0 5px;
 
   a {
     color: #fff;
@@ -178,7 +178,8 @@ body {
   // background: #F0F1EB;;
   // background: #272828;
   // background: #303c40;
-  background: #5c6570;
+  // background: #5c6570;
+  background: #262626;
 }
 
 // .site-header {
@@ -194,10 +195,19 @@ body {
   padding-top: 30px;
   padding-bottom: 80px;
   background: #fff;
+  -moz-box-shadow: 0 0 10px 8px #000;
+  -webkit-box-shadow: 0 0 10px 8px #000;
+  box-shadow: 0 0 10px 8px #000;
 }
 
 /* Editor component
 ------------------------------------------------------- */
+
+#editor_container {
+  -moz-box-shadow: 0 0 10px 5px #E2E2E2;
+  -webkit-box-shadow: 0 0 10px 5px #E2E2E2;
+  box-shadow: 0 0 10px 5px #E2E2E2;
+}
 
 .editor-component {
   
