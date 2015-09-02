@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html xmlns:mml="http://www.w3.org/1998/Math/MathML">
+  <head>
+    <title>Substance Composer - Create beautiful web publications</title>
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+
+    <link href='../styles/font-awesome.css' rel='stylesheet' type='text/css'/>
+
+    <meta name="description" content="Whether you're a journalist, writer or scientist, the Substance Composer<br/> is the tool to create and self-publish professional web-first publications."/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0, user-scalable=yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link href='../styles/bootstrap.css' rel='stylesheet' type='text/css'/>
+    <link href='../styles/substance.css' rel='stylesheet' type='text/css'/>
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+
+    <script>
+
+      $(function() {
+        // Download button switcher
+        $('.choose-os.windows').click(function(e) {
+          $('.choose-os').removeClass('active');
+          $('.choose-os.windows').addClass('active');
+            
+          $('.download-button').removeClass('active');
+          $('.download-button.windows').addClass('active');
+          e.preventDefault();
+        });
+
+        $('.choose-os.osx').click(function(e) {
+          $('.choose-os').removeClass('active');
+          $('.choose-os.osx').addClass('active');
+            
+          $('.download-button').removeClass('active');
+          $('.download-button.osx').addClass('active');
+          
+          e.preventDefault();
+        });
+
+        $('.choose-os.ubuntu').click(function(e) {
+          $('.choose-os').removeClass('active');
+          $('.choose-os.ubuntu').addClass('active');
+            
+          $('.download-button').removeClass('active');
+          $('.download-button.ubuntu').addClass('active');
+          
+          e.preventDefault();
+        });
+      });
+
+    </script>
+  </head>
+  <body>
+
+    <div class="section darker header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 header-inner">
+            <!-- <a class="substance-logo" href="/"><img src="/images/substance-logo-white.png"></a> -->
+            <a class="substance-logo" href="/">Substance</a>
+            <div class="menu">
+              <a class="menu-entry active" href="/composer">Composer</a>
+              <a class="menu-entry" href="/news">News</a>
+              <a class="menu-entry" href="/about">About Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <div class="section darker header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text-center">Do-It-Yourself Publishing for everyone</h1>
+            <p class="lead text-center">
+              Whether you're a journalist or an ambitious hobbyist writer, <b>Substance Composer</b><br/> is the tool to create and share professional web-first publications.
+            </p>
+            <a href="../images/screenshots/substance-composer-beta-3.png" target="_blank"><img src="../images/screenshots/substance-composer-beta-3.png"/></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Substance Composer -->
+    <div class="section substance-composer darker">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+              <p>
+                <a href="#" class="choose-os osx active">Mac OSX</a>
+                <a href="#" class="choose-os windows">Windows</a>
+                <a href="#" class="choose-os ubuntu">Ubuntu</a><br/><br/>
+              </p>
+              <a class="download-button active osx" href="https://github.com/substance/composer/releases/download/v1.0.0-beta3/Substance-Composer-Beta-3-OSX.zip">
+                <div class="label">Download Beta 3</div>
+                <div class="fileinfo">Substance-Composer-Beta-3-OSX.zip (38.4MB)</div>
+              </a>
+
+              <a class="download-button windows" href="https://github.com/substance/composer/releases/download/v1.0.0-beta3/Substance-Composer-Beta-3-Win-Setup.exe">
+                <div class="label">Download Beta 3</div>
+                <div class="fileinfo">Substance-Composer-Beta-3-Win-Setup.exe (25.9MB)</div>
+              </a>
+
+              <a class="download-button ubuntu" href="https://github.com/substance/composer/releases/download/v1.0.0-beta3/Substance-Composer-Beta-3-Ubuntu.deb">
+                <div class="label">Download Beta 3</div>
+                <div class="fileinfo">Substance-Composer-Beta-3-Ubuntu.deb (49.1MB)</div>
+              </a>
+
+            <p class="" style="font-size: 17px;">Please read the <a href="/composer/release-notes/beta-3">release notes</a> and the <a href="/composer/user-manual">user manual</a>.</p>
+            <p class="text-center" style="font-size: 14px; "><br/>On OSX 10.9, make sure you allow opening downloaded apps:<br/> <strong>System Preferences -> Security &amp; Privacy</strong>. Allow apps downloaded from: "Anywhere"</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mission -->
+    <div class="section mission light">
+      <div class="container">
+          
+        <!-- <div class="row heading">
+          <div class="col-md-12 text-center">
+            Composer Features
+          </div>
+        </div> -->
+  
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="text-center">Write for the web</h2>
+            <p class="text-center">
+              The web just turned 25. And still, most writing tools available are only <i>simulating print</i>.
+            </p>
+            <div class="text-center">
+              <img style="padding: 40px;" src="../images/web-publishing.png"/>
+            </div>
+            <p class="text-center">
+              <b>Substance Composer</b> sets your content free from the four walls of paper and turns you into a professional publisher.
+            </p>
+            
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="text-center">Content First</h3>
+            <div class="text-center">
+              <img style="padding-top: 60px; padding-bottom: 0px;" src="../images/semantic-editing.png"/>
+            </div>
+            <p class="text-center">
+              Be creative on a white canvas. Don't worry about formatting and just focus on your content. 
+            </p>            
+
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="text-center">Include Media</h3>
+            <div class="text-center">
+              <img style="padding-top: 60px; padding-bottom: 0px;" src="../images/bar-chart.png"/>
+            </div>
+            <p class="text-center">
+              <b>Substance Composer</b> supports media content such as <b>images</b> and <b>videos</b>. You can even include interactive web content such as <b>visualizations</b>.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="text-center">Advanced export options</h3>
+
+            <p class="text-center">
+              <!--Choose from a variety of professional templates. -->Your publication will look good on any digital device: Desktops, mobile phones and tablets.
+            </p>
+            <p class="text-center">
+              Decide whether you want to include a <i>Table of Contents</i> or enable <i>section numbering</i>. You can also choose to add a list of references to the bottom of your publication.
+              <!--If you include the <i>source file</i> of your article, your readers can work with the material offline, make private notes etc.-->
+            </p>
+            <p class="text-center">
+              Publications are self-contained web pages. In order to share with the world you upload them to a webspace of your choice.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="text-center">Collaborate</h3>
+            <p class="text-center">
+              Send your document to friends for review. They can point out errors and stick remarks on certain text passages.
+            </p>
+            <div class="text-center">
+              <img style="padding: 40px;" src="../images/collaboration.png"/>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="text-center">Open Document Format</h3>
+            <p class="text-center">
+              Substance content is stored as JSON, the data exchange format of the web. Each document is a little database that can be queried by a new generation of tools, such as readers and search engines.
+            </p>
+            
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="text-center">Privacy and Control</h3>
+            <p class="text-center">
+              Cloud-services take control over your content, and do not respect your privacy. Subtance gives control back to the user.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="text-center">Open Source</h3>
+            <p class="text-center">
+              The building blocks of Substance are available as <a href="http://github.com/substance">Open Source</a>.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mission -->
+    <div class="section mission light alt">
+      <div class="container">
+          
+        <div class="row heading">
+          <div class="col-md-12 text-center">
+            User Voices
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-md-12">
+            <blockquote class="text-center">&bdquo;I found Substance very useful, as it lets me focus on my <a target="_blank" href="http://integral.github.io/stories/greenpeace/mannes-ubels-interview/">writing</a>. For my work, it is important that I can add media content such as videos and audio tracks and easily generate a rich web-publication, that can be viewed on different devices. Substance does all that for me, I just need to upload to a server. That's terrific.&rdquo;<br/><br/> [ <a href="http://substance.io/articles/everybody-needs-a-space-for-free-expression/#video_b6c9a622ada5d648f65a17c5270c2b3a">Watch video</a> ]</blockquote>
+            <p class="text-center">Daniel Beilison, human rights activist from Moscow, Russia</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <blockquote class="text-center">&bdquo;Substance Composer is a great solution for the management of content submissions to my web site! By allowing my writers to submit their articles in Substance Document Format they are already almost ready for publication. All I have to do is apply my site's template and the article is ready to post. I can easily edit an article myself, point out where corrections have to be made, or leave comments by using Substance's annotation features. I look forward to future product releases! I think this software is going to be a real game changer.&rdquo;</blockquote>
+            <p class="text-center">Rebecca Close from Tempe, United States</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-47090679-1', 'substance.io');
+      ga('send', 'pageview');
+
+    </script>
+  </body>
+</html>
