@@ -3,12 +3,6 @@
 ---
 @charset "utf-8";
 
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-  "styles/index",
-  "styles/editor",
-  "syntax-highlighting"
-;
 
 /* Page Layout
 -------------------------------------------------- */
@@ -37,36 +31,67 @@ body .limiter {
   }
 }
 
-.substance-header {
-  font-size: 60px;
-  font-family: 'Josefin Sans';
-  font-weight: 600;
-  // color: rgba(0,0,0,0.75);
-  color: #fff;
-}
+body .site-header {
+  padding-top: 30px;
+  padding-bottom: 40px;
 
-.substance-header:hover {
-  color: #fff;
-}
-
-.intro {
   color: rgba(255, 255, 255, 0.7);
-  font-size: 24px;
 
   a {
     color: #fff;
-    
-    &:hover {
-      border-bottom: 1px solid #fff;
+  }
+
+  .substance-header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+
+
+    .substance-logo {
+      padding-right: 20px;
+      font-size: 44px;
+      font-family: 'Josefin Sans';
+      font-weight: 600;
+    }
+
+
+    /* Large */
+    .navigation {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-end;
+      .nav-item {
+        font-size: 18px;
+        margin-right: 10px;
+        border-bottom: 1px solid transparent;
+
+        &:hover {
+          border-bottom: 1px solid #fff;
+        }
+      }
     }
   }
+
+  .intro {
+    // color: rgba(255, 255, 255, 0.7);
+    font-size: 24px;
+
+    a {
+      color: #fff;
+      
+      &:hover {
+        border-bottom: 1px solid #fff;
+      }
+    }
+  }
+
 }
 
 
 .editor-info {
   color: rgba(255, 255, 255, 0.7);
-  // font-size: 24px;
-  padding: 10px 0;
+  padding-top: 30px;
 
   a {
     color: #fff;
@@ -129,29 +154,8 @@ body .limiter {
   }
 }
 
-body .site-header {
-  // display: flex; align-items: center;
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
 .container { display: flex; align-items: flex-start; }
 .stretch { flex: 1; }
-
-
-/* Large */
-.navigation {
-
-  display: flex;
-  // display: none;
-  flex-flow: row wrap;
-  /* This aligns items to the end line on main-axis */
-  justify-content: flex-end;
-
-  .nav-item {
-    padding: 2px 5px;
-  }
-}
 
 // Mobile-tweaks for the better Substance
 @media all and (max-width: 640px) {
@@ -172,21 +176,16 @@ body .site-header {
   }
 }
 
-
 body {
-  // background: #fbf9f1;
-  // background: #F0F1EB;;
-  // background: #272828;
-  // background: #303c40;
+
+  font-family: Lato;
   background: #5c6570;
+  // Overrides demo styles
+  padding: 0px;
+  overflow: visible;
 }
 
-// .site-header {
-//   background: #272828;
-// }
-
 .teaser {
-  // background: #272828;
   padding-bottom: 60px;
 }
 
@@ -199,25 +198,21 @@ body {
 /* Editor component
 ------------------------------------------------------- */
 
-.editor-component {
-  
+.sc-notepad {
   border: 1px solid transparent;
   background: white;
-  
   color: #222;
   position: relative;
 }
 
-.toolbar {
-  position: absolute;
-  left: 14px;
-  right: 14px;
-  top: 14px;
-  padding-bottom: 20px;
-}
-
-.editor-component .container-node {
+// Overrides demo styles
+.sc-container-editor {
   padding: 20px;
-  margin-top: 65px;
+  position: static;
+  top: auto;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  overflow: visible;
 }
 
