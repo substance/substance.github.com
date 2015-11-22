@@ -906,27 +906,23 @@ ol.sc-list > .sc-li.level-4::before {
 .sc-strong {
   font-weight: bold; }
 
-/* Todo checkboxes */
-.content-node.todo .done {
-  display: inline-block;
-  width: 20px;
-  cursor: pointer; }
-
-.annotation.mark {
+.sc-mark {
   background: rgba(234, 231, 35, 0.3); }
 
-.content-node.todo {
+.sc-todo {
   padding-left: 20px;
   padding-bottom: 20px;
   position: relative; }
-
-.content-node.todo .done {
-  position: absolute;
-  left: 0px;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -o-user-select: none; }
+  .sc-todo .se-done {
+    display: inline-block;
+    width: 20px;
+    cursor: pointer;
+    position: absolute;
+    left: 0px;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none; }
 
 /* Shared demo styles */
 body {
@@ -940,9 +936,7 @@ body {
   bottom: 10px;
   right: 10px; }
 
-/* Editor component
-------------------------------------------------------- */
-.sc-prose-editor {
+.sc-notepad {
   position: fixed;
   top: 10px;
   bottom: 40px;
