@@ -209,9 +209,8 @@ body {
   right: auto;
 }
 
-// Overrides demo styles
-.sc-container-editor {
-  padding: 20px;
+// Monkey-patch split pane
+.sc-split-pane {
   position: static;
   top: auto;
   bottom: auto;
