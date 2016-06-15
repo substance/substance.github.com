@@ -16,7 +16,12 @@ h2 {
 ul {
   margin: 0px;
   padding-bottom: 20px;
+
+  li {
+    padding-bottom: 10px;
+  }
 }
+
 
 p {
   padding-bottom: 20px;
@@ -89,8 +94,10 @@ body .site-header {
   }
 
   .intro {
+    padding: 30px 0;
+    // text-align: center;
     // color: rgba(255, 255, 255, 0.7);
-    font-size: 24px;
+    font-size: 26px;
 
     a {
       color: #fff;
@@ -193,7 +200,7 @@ body .site-header {
 
 body {
   font-family: Lato;
-  background: #5c6570;
+  background: #3B4749;
   // Overrides demo styles
   padding: 0px;
   overflow: visible;
