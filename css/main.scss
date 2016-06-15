@@ -94,7 +94,7 @@ body .site-header {
 
     a {
       color: #fff;
-      
+
       &:hover {
         border-bottom: 1px solid #fff;
       }
@@ -110,7 +110,7 @@ body .site-header {
 
   a {
     color: #fff;
-    
+
     &:hover {
       border-bottom: 1px solid #fff;
     }
@@ -192,7 +192,6 @@ body .site-header {
 }
 
 body {
-
   font-family: Lato;
   background: #5c6570;
   // Overrides demo styles
@@ -208,6 +207,16 @@ body {
   padding-top: 30px;
   padding-bottom: 80px;
   background: #fff;
+}
+
+.screencap {
+  border: 1px solid #ddd;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  img {
+    width: 100%;
+  }
 }
 
 /* Editor component
