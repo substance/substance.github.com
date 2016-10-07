@@ -82,7 +82,8 @@ body .site-header {
       flex-flow: row wrap;
       justify-content: flex-end;
       .nav-item {
-        font-size: 18px;
+        font-size: 15px;
+        font-weight: 700;
         margin-right: 10px;
         border-bottom: 1px solid transparent;
 
@@ -199,8 +200,9 @@ body .site-header {
 }
 
 body {
-  font-family: Lato;
-  background: #3B4749;
+  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Arial", sans-serif;
+  // background: #3B4749;
+  background: #2E2E2E;
   // Overrides demo styles
   padding: 0px;
   overflow: visible;
