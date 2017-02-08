@@ -228,6 +228,18 @@ body {
   }
 }
 
+.partners-supporters {
+  margin-top: 40px;
+  overflow: hidden;
+}
+.partners-supporters > a {
+  display: block;
+  float: left;
+}
+
+.partners-supporters > a img {
+  display: block;
+}
 /* Editor component
 ------------------------------------------------------- */
 
@@ -251,4 +263,3 @@ body {
   right: auto;
   overflow: visible;
 }
-
