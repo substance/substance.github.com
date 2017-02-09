@@ -231,15 +231,18 @@ body {
 .partners-supporters {
   margin-top: 40px;
   overflow: hidden;
+  text-align: center;
 }
 .partners-supporters > a {
-  display: block;
-  float: left;
+  display: inline-block;
 }
 
 .partners-supporters > a img {
   display: block;
+  margin: 0;
+  padding: 0;
 }
+
 /* Editor component
 ------------------------------------------------------- */
 
