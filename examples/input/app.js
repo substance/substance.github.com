@@ -1,125 +1,133 @@
-const {
-  ProseEditor, ProseEditorConfigurator, DocumentSession, DocumentNode,
-  ProseEditorPackage, Component
-} = substance
+(function (global, factory) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('substance')) :
+  typeof define === 'function' && define.amd ? define(['substance'], factory) :
+  (factory(global.substance));
+}(this, (function (substance) {
 
-/*
-  Node definition
-*/
-class InputNode extends DocumentNode {}
+var InputNode = (function (DocumentNode$$1) {
+  function InputNode () {
+    DocumentNode$$1.apply(this, arguments);
+  }if ( DocumentNode$$1 ) InputNode.__proto__ = DocumentNode$$1;
+  InputNode.prototype = Object.create( DocumentNode$$1 && DocumentNode$$1.prototype );
+  InputNode.prototype.constructor = InputNode;
+
+  
+
+  return InputNode;
+}(substance.DocumentNode));
 
 InputNode.defineSchema({
   type: 'input-node',
   content: { type: 'string', default: '' }
-})
+});
 
-/*
-  Node display component
-*/
-class InputComponent extends Component {
-  // Register for model side updates
-  didMount() {
-    this.props.node.on('content:changed', this.onContentChange, this)
+var InputComponent = (function (Component$$1) {
+  function InputComponent () {
+    Component$$1.apply(this, arguments);
   }
+
+  if ( Component$$1 ) InputComponent.__proto__ = Component$$1;
+  InputComponent.prototype = Object.create( Component$$1 && Component$$1.prototype );
+  InputComponent.prototype.constructor = InputComponent;
+
+  InputComponent.prototype.didMount = function didMount () {
+    // Register for model side updates
+    this.context.editorSession.onRender('document', this.onContentChange, this, {
+      path: [this.props.node.id, 'content']
+    });
+  };
 
   // And please always deregister
-  dispose() {
-    this.props.node.off(this)
-  }
+  InputComponent.prototype.dispose = function dispose () {
+    this.context.editorSession.off(this);
+  };
 
-  render($$) {
-    let el = $$('div').addClass('sc-input-node')
-    let input = $$('input').ref('input')
+  InputComponent.prototype.render = function render ($$) {
+    var el = $$('div').addClass('sc-input-node');
+    var input = $$('input').ref('input')
       .val(this.props.node.content)
-      .on('change', this.onChange)
+      .on('change', this.onChange);
     // you should disable the input when the parent asks you to do so
     if (this.props.disabled) {
-      input.attr('disabled', true)
+      input.attr('disabled', true);
     }
 
-    el.append(input)
+    el.append(input);
     return el
-  }
+  };
 
   // this is called when the input's content has been changed
-  onChange() {
-    let documentSession = this.context.documentSession
-    let node = this.props.node
-    let newVal = this.refs.input.val()
-    documentSession.transaction(function(tx) {
-      tx.set([node.id, 'content'], newVal)
-    })
-  }
+  InputComponent.prototype.onChange = function onChange () {
+    var editorSession = this.context.editorSession;
+    var node = this.props.node;
+    var newVal = this.refs.input.val();
+    editorSession.transaction(function(tx) {
+      tx.set([node.id, 'content'], newVal);
+    });
+  };
 
   // this is called when the model has changed, e.g. on undo/redo
-  onContentChange() {
-    this.refs.input.val(this.props.node.content)
-  }
-}
+  InputComponent.prototype.onContentChange = function onContentChange () {
+    this.refs.input.val(this.props.node.content);
+  };
 
-/*
-  Package definition of your plugin
-*/
-const InputPackage = {
+  return InputComponent;
+}(substance.Component));
+
+var InputPackage = {
   name: 'input',
   configure: function(config) {
-    config.addNode(InputNode)
-    config.addComponent(InputNode.type, InputComponent)
-    config.addLabel('input', 'Input')
+    config.addNode(InputNode);
+    config.addComponent(InputNode.type, InputComponent);
+    config.addLabel('input', 'Input');
   }
-}
+};
 
-/*
-  Example document
-*/
-const fixture = function(tx) {
-  let body = tx.get('body')
+var fixture = function(tx) {
+  var body = tx.get('body');
   tx.create({
     id: 'title',
     type: 'heading',
     level: 1,
     content: 'Input Element'
-  })
-  body.show('title')
+  });
+  body.show('title');
   tx.create({
     id: 'intro',
     type: 'paragraph',
     content: [
       "You can use custom elements with an HTML input element"
     ].join('')
-  })
-  body.show('intro')
+  });
+  body.show('intro');
   tx.create({
     type: 'input-node',
     id: 'input',
     content: 'Lorem ipsum...'
-  })
-  body.show('input')
+  });
+  body.show('input');
   tx.create({
     id: 'the-end',
     type: 'paragraph',
     content: 'That way you can implement editor functionality using class web development practices.'
-  })
-  body.show('the-end')
-}
+  });
+  body.show('the-end');
+};
 
-/*
-  Application
-*/
-let config = {
-  name: 'input-example',
-  configure: function(config) {
-    config.import(ProseEditorPackage)
-    config.import(InputPackage)
-  }
-}
-let configurator = new ProseEditorConfigurator().import(config)
+var cfg = new substance.Configurator();
+cfg.import(substance.ProseEditorPackage);
+cfg.import(InputPackage);
 
 window.onload = function() {
-  let doc = configurator.createArticle(fixture)
-  let documentSession = new DocumentSession(doc)
-  ProseEditor.mount({
-    documentSession: documentSession,
-    configurator: configurator
-  }, document.body)
-}
+  var doc = cfg.createArticle(fixture);
+  var editorSession = new substance.EditorSession(doc, {
+    configurator: cfg
+  });
+  substance.ProseEditor.mount({
+    editorSession: editorSession
+  }, document.body);
+};
+
+})));
+
+//# sourceMappingURL=./app.js.map

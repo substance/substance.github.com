@@ -1,89 +1,110 @@
-const {
-  ProseEditor, ProseEditorConfigurator, DocumentSession, DocumentNode,
-  ProseEditorPackage, BlockNodeComponent, TextPropertyEditor
-} = substance
+(function (global, factory) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('substance')) :
+  typeof define === 'function' && define.amd ? define(['substance'], factory) :
+  (factory(global.substance));
+}(this, (function (substance) {
 
 /*
   Node definition
 */
-class EntityNode extends DocumentNode {}
+var EntityNode = (function (DocumentNode$$1) {
+  function EntityNode () {
+    DocumentNode$$1.apply(this, arguments);
+  }if ( DocumentNode$$1 ) EntityNode.__proto__ = DocumentNode$$1;
+  EntityNode.prototype = Object.create( DocumentNode$$1 && DocumentNode$$1.prototype );
+  EntityNode.prototype.constructor = EntityNode;
+
+  
+
+  return EntityNode;
+}(substance.DocumentNode));
 
 EntityNode.define({
   type: 'entity',
   name: 'text',
   description: 'text'
-})
+});
 
 /*
   Node display component
 */
-class EntityComponent extends BlockNodeComponent {
-  render($$) {
-    let el = $$('div').addClass('sc-entity')
+var EntityComponent = (function (BlockNodeComponent$$1) {
+  function EntityComponent () {
+    BlockNodeComponent$$1.apply(this, arguments);
+  }
+
+  if ( BlockNodeComponent$$1 ) EntityComponent.__proto__ = BlockNodeComponent$$1;
+  EntityComponent.prototype = Object.create( BlockNodeComponent$$1 && BlockNodeComponent$$1.prototype );
+  EntityComponent.prototype.constructor = EntityComponent;
+
+  EntityComponent.prototype.render = function render ($$) {
+    var el = $$('div').addClass('sc-entity');
 
     el.append(
       $$('div').ref('title').addClass('se-title').append('Entity')
-    )
+    );
 
-    let table = $$('table')
+    var table = $$('table');
     table.append(
       $$('colgroup').append(
         $$('col').addClass('se-label-col'),
         $$('col').addClass('se-value-col')
       )
-    )
+    );
 
-    let nameRow = $$('tr')
-    nameRow.append($$('td').addClass('se-label').append('Name:'))
+    var nameRow = $$('tr');
+    nameRow.append($$('td').addClass('se-label').append('Name:'));
     nameRow.append($$('td').addClass('se-value').append(
-      $$(TextPropertyEditor, {
+      $$(substance.TextPropertyEditor, {
         path: [this.props.node.id, 'name'],
         disabled: this.props.disabled
       }).ref('nameEditor')
-    ))
-    table.append(nameRow)
-    table.append($$('tr').addClass('se-separator'))
+    ));
+    table.append(nameRow);
+    table.append($$('tr').addClass('se-separator'));
 
-    let descriptionRow = $$('tr')
-    descriptionRow.append($$('td').addClass('se-label').append('Description:'))
+    var descriptionRow = $$('tr');
+    descriptionRow.append($$('td').addClass('se-label').append('Description:'));
     descriptionRow.append($$('td').addClass('se-value').append(
-      $$(TextPropertyEditor, {
+      $$(substance.TextPropertyEditor, {
         path: [this.props.node.id, 'description'],
         disabled: this.props.disabled
       }).ref('descriptionEditor')
-    ))
-    table.append(descriptionRow)
-    el.append(table)
+    ));
+    table.append(descriptionRow);
+    el.append(table);
     return el
-  }
-}
+  };
+
+  return EntityComponent;
+}(substance.BlockNodeComponent));
 
 /*
   Package definition of your plugin
 */
-const EntityPackage = {
+var EntityPackage = {
   name: 'entity',
   configure: function(config) {
-    config.addNode(EntityNode)
-    config.addComponent(EntityNode.type, EntityComponent)
-    config.addLabel('entity', 'Entity')
-    config.addLabel('entity.name', 'Name')
-    config.addLabel('entity.description', 'Description')
+    config.addNode(EntityNode);
+    config.addComponent(EntityNode.type, EntityComponent);
+    config.addLabel('entity', 'Entity');
+    config.addLabel('entity.name', 'Name');
+    config.addLabel('entity.description', 'Description');
   }
-}
+};
 
 /*
   Example document
 */
-const fixture = function(tx) {
-  let body = tx.get('body')
+var fixture = function(tx) {
+  var body = tx.get('body');
   tx.create({
     id: 'title',
     type: 'heading',
     level: 1,
     content: 'Embedded Forms'
-  })
-  body.show('title')
+  });
+  body.show('title');
   tx.create({
     id: 'intro',
     type: 'paragraph',
@@ -91,40 +112,40 @@ const fixture = function(tx) {
       "It is very easy to add a node with a form editing interface.",
       "For example this is very useful to create meta-data editors."
     ].join(' ')
-  })
-  body.show('intro')
+  });
+  body.show('intro');
   tx.create({
     type: 'entity',
     id: 'entity',
     name: 'Foo',
     description: 'Bar'
-  })
-  body.show('entity')
+  });
+  body.show('entity');
   tx.create({
     id: 'the-end',
     type: 'paragraph',
     content: "That's it."
-  })
-  body.show('the-end')
-}
+  });
+  body.show('the-end');
+};
 
 /*
   Application
 */
-let config = {
-  name: 'form-example',
-  configure: function(config) {
-    config.import(ProseEditorPackage)
-    config.import(EntityPackage)
-  }
-}
-let configurator = new ProseEditorConfigurator().import(config)
+var cfg = new substance.ProseEditorConfigurator();
+cfg.import(substance.ProseEditorPackage);
+cfg.import(EntityPackage);
 
 window.onload = function() {
-  let doc = configurator.createArticle(fixture)
-  let documentSession = new DocumentSession(doc)
-  ProseEditor.mount({
-    documentSession: documentSession,
-    configurator: configurator
-  }, document.body)
-}
+  var doc = cfg.createArticle(fixture);
+  var editorSession = new substance.EditorSession(doc, {
+    configurator: cfg
+  });
+  substance.ProseEditor.mount({
+    editorSession: editorSession
+  }, document.body);
+};
+
+})));
+
+//# sourceMappingURL=./app.js.map

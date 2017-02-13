@@ -34,24 +34,21 @@ body {
   font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Arial", sans-serif;
   font-size: 16px;
   min-height: 30px;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;/*-webkit-font-smoothing:antialiased;*/
 }
 input {
   color: rgba(0,0,0,0.75);
   font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Arial", sans-serif;
   font-size: 16px;
   min-height: 30px;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;/*-webkit-font-smoothing:antialiased;*/
 }
 textarea {
   color: rgba(0,0,0,0.75);
   font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Arial", sans-serif;
   font-size: 16px;
   min-height: 30px;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;/*-webkit-font-smoothing:antialiased;*/
 }
 h1 {
   font-weight: 600;

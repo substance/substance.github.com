@@ -31,7 +31,6 @@
 
   /* Collaborator colors */
 }
-/* TODO: @import './css/_index.css';*/
 /* switch-text-type */
 /* Switch Text Type Component
 ---------------------------- */
@@ -91,69 +90,68 @@
 .sc-switch-text-type .se-option.sm-blockquote {
   border-left: 2px solid #E0E4E4;
 }
-/* button */
-/*
-  Generic styles
-  =============================================================
-*/
-.sc-button.sm-style-outline[disabled=true],
-.sc-button.sm-style-outline-dark[disabled=true],
-.sc-button.sm-style-plain[disabled=true],
-.sc-button.sm-style-plain-dark[disabled=true] {
-  opacity: 0.4;
-  cursor: default;
+/* blocker */
+.sc-blocker {
+  z-index: 500000;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+
+  background: #FFF;
+
+  opacity: 0;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
 }
+.sc-blocker > .se-display {
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+}
+.sc-blocker.sm-visible {
+  opacity: 0.7;
+}
+.sc-blocker.sm-visible > .se-display {
+  opacity: 1.0;
+}
+/* button */
 /*
   Outline style
   =============================================================
+
+  Used for tools in regular white Toolbar
 */
 .sc-button.sm-style-outline {
   position: relative;
   height: 30px;
   min-width: 30px;
-  text-align: center;/*font-size: var(--small-font-size);*//*
-    TODO: if we put --small-font-size here = 13px
-    we get different alignments for buttons with
-    vs buttons without labels.
+  line-height: 30px;
+  text-align: center;
+  /*
+    TODO: if we put var(--small-font-size) here = 13px we get different
+    alignments for buttons with vs buttons without labels.
   */
-  font-weight: 600;
   font-size: 12px;
+  font-weight: 600;
   border-radius: 15px;
   border: 1px solid #E0E4E4;
   padding-left: 7px;
   padding-right: 7px;
 }
-.sc-button.sm-style-outline-dark {
-  position: relative;
-  height: 30px;
-  min-width: 30px;
-  text-align: center;/*font-size: var(--small-font-size);*//*
-    TODO: if we put --small-font-size here = 13px
-    we get different alignments for buttons with
-    vs buttons without labels.
-  */
-  font-weight: 600;
-  font-size: 12px;
-  border-radius: 15px;
-  border: 1px solid #E0E4E4;
-  padding-left: 7px;
-  padding-right: 7px;
+.sc-button.sm-style-outline[disabled=true] {
+  opacity: 0.4;
+  cursor: default;
 }
-.sc-button.sm-style-outline > .se-label,
-.sc-button.sm-style-outline-dark > .se-label {
+.sc-button.sm-style-outline > .se-label {
   font-weight: 600;
   display: inline-block;
   padding: 0px 5px;
 }
-.sc-button.sm-style-outline > .se-hint,
-.sc-button.sm-style-outline-dark > .se-hint {
-  display: inline-block;
-  color: rgba(0,0,0,0.4);
-  font-size: 9px;
-}
 /* Add spacing between icon and label */
-.sc-button.sm-style-outline > * + *,
-.sc-button.sm-style-outline-dark > * + * {
+.sc-button.sm-style-outline > * + * {
   padding-left: 5px;
 }
 .sc-button.sm-style-outline.sm-active {
@@ -169,69 +167,48 @@
   background: #444;
 }
 /*
-  Dark style color overrides
-*/
-.sc-button.sm-style-outline-dark {
-  border: 1px solid rgba(255,255,255, 0.8);
-  color: rgba(255,255,255, 0.8);
-}
-.sc-button.sm-style-outline-dark.sm-active {
-  border-color: #fff;
-  background: #fff;
-  color: #222;
-}
-/*
-  Plain Style
+  Plain Dark Style
   =============================================================
 
-  Used inside of tool dropdowns
+  Used in Overlay
 */
-.sc-button.sm-style-plain,
 .sc-button.sm-style-plain-dark {
-  overflow: hidden;
-  width: 100%;
-  padding: 3px 10px;
-  line-height: 24px;
-}
-.sc-button.sm-style-plain > .se-label,
-.sc-button.sm-style-plain-dark > .se-label {
-  float: left;
+  position: relative;
+  height: 30px;
+  min-width: 30px;
+  line-height: 30px;
+  text-align: center;
+  /*
+    TODO: if we put var(--small-font-size) here = 13px we get different
+    alignments for buttons with vs buttons without labels.
+  */
+  font-size: 12px;
   font-weight: 600;
+  padding-left: 7px;
+  padding-right: 7px;
+  color: rgba(255, 255, 255, 0.4);
 }
-.sc-button.sm-style-plain > .se-hint,
-.sc-button.sm-style-plain-dark > .se-hint {
+.sc-button.sm-style-plain-dark > .se-label {
+  font-weight: 600;
   display: inline-block;
-  font-size: 11px;
-  float: right;
+  padding: 0px 5px;
 }
-/*
-  White style color
-*/
-.sc-button.sm-style-plain:hover {
-  background: rgba(0,0,0,0.1);
+/* Add spacing between icon and label */
+.sc-button.sm-style-plain-dark > * + * {
+  padding-left: 5px;
 }
-.sc-button.sm-style-plain > .se-hint {
-  color: rgba(0,0,0,0.4);
+.sc-button.sm-style-plain-dark.sm-active {
+  color: rgba(255,255,255,1);
 }
-/*
-  Dark style color
-*/
-.sc-button.sm-style-plain-dark {
-  color: rgba(255,255,255, 0.6);
-}
-.sc-button.sm-style-plain-dark:hover {
-  background: rgba(255,255,255,0.2);
-  color: rgba(255,255,255, 0.8);
-}
-.sc-button.sm-style-plain-dark > .se-hint {
-  color: rgba(255,255,255,0.4);
+.sc-button.sm-style-plain-dark:focus {
+  color: rgba(255,255,255, 0.75);
 }
 /*
   Some tools add a mode icon, which we position here
 */
 .sc-button > .se-mode {
+  /* we hide the mode indicator for now - too much visual noise */
   display: none;
-  /* position: absolute; top: 3px; right: 3px; font-size: 7px;*/
 }
 /* code */
 .sc-code {
@@ -249,6 +226,73 @@
 .sc-switch-text-type .se-option.sm-codeblock {
   font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
   font-size: 15px;
+}
+/* context-menu */
+.sc-context-menu {
+  position: absolute;
+  background: #2E2E2C;
+  border-radius: 5px;
+  font-size: 13px;
+  z-index: 1000;
+}
+.sc-context-menu.sm-hidden {
+  /* we don't use display none because we want to determine the content's width */
+  visibility: hidden;
+}
+.sc-context-menu > .sc-tool-group {
+  min-width: 120px;
+  padding: 5px 0;
+}
+.sc-context-menu > .sc-tool-group:not(:last-child) {
+  border-bottom: 1px solid #111;
+}
+/* dropzones */
+.sc-dropzones {
+}
+.sc-dropzones .se-dropzone {
+  position: absolute;
+}
+.sc-dropzones .se-dropzone .se-drop-teaser {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  z-index: 100;
+  transition: background-color 0.5s ease;
+  height: 3px;
+}
+.sc-dropzones .se-dropzone.sm-over .se-drop-teaser {
+  background: #2A8CFF;
+}
+.sc-dropzones .se-dropzone .se-drop-shield {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index:101;
+}
+.sc-dropzones.sm-hidden {
+  visibility: hidden;
+}
+/* Custom Dropzone styles */
+.sc-dropzones .se-custom-dropzone {
+  z-index: 102;
+}
+.sc-dropzones .se-custom-dropzone .se-drop-shield {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index:103;
+}
+.sc-dropzones .se-custom-dropzone.sm-over {
+  background: rgba(0,0,0,0.7);
+  color: #fff
+}
+.sc-dropzones .se-custom-dropzone .se-message {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 20px 0;
+  display: none;
+}
+.sc-dropzones .se-custom-dropzone.sm-over .se-message {
+  display: block;
 }
 /* emphasis */
 .sc-emphasis {
@@ -294,20 +338,20 @@
 .sc-inline-wrapper.sm-default-style.sm-selected > .se-container {
   background: rgba(163,205,253, 0.6);
   outline: 2px solid;
-  outline-color: #A3CDFD;
+  outline-color: #2A8CFF;
 }
 .sc-inline-wrapper.sm-default-style.sm-co-selected > .se-container {
   background: rgba(163,205,253, 0.6);
   outline: 2px solid;
-  outline-color: #A3CDFD;
+  outline-color: #2A8CFF;
 }
 .sc-inline-wrapper.sm-default-style.sm-focused > .se-container {
   outline: 2px solid;
-  outline-color: #A3CDFD;
+  outline-color: #2A8CFF;
 }
 .sc-inline-wrapper.sm-default-style.sm-co-focused > .se-container {
   outline: 2px solid;
-  outline-color: #A3CDFD;
+  outline-color: #2A8CFF;
 }
 /* paragraph */
 .sc-paragraph {}
@@ -315,34 +359,19 @@
 .sc-prose-editor {}
 .sc-prose-editor .sc-container-editor {
   padding:  20px;
+  margin: 0 auto;
+  max-width: 800px;
 }
 /* Add padding to each child except last one */
-.sc-prose-editor .sc-container-editor > * + * {
-  padding-top:  20px;
+.sc-prose-editor .sc-container-editor > * {
+  margin: 10px 0;
 }
-.sc-prose-editor .sc-toolbar {
+.sc-prose-editor .se-toolbar-wrapper {
   border-bottom: 1px solid  #E0E4E4;
 }
-.sc-prose-editor-overlay-tools {}
-.sc-prose-editor-overlay-tools::before {
-  content: '';
-  display: block;
+.sc-prose-editor .se-toolbar-wrapper .sc-toolbar {
+  max-width: 800px;
   margin: 0 auto;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 4px 8px 4px;
-  border-color: transparent transparent #2E2E2C transparent;
-}
-.sc-prose-editor-overlay-tools > .se-active-tools {
-  border-radius: 5px;
-  background: #2E2E2C;
-  padding: 5px;
-}
-.sc-prose-editor-overlay-tools > .se-active-tools > * {
-  display: inline-block;
-  margin-left: 2px;
-  margin-right: 2px;
 }
 /* strong */
 .sc-strong {
@@ -364,16 +393,12 @@
   margin: 0px auto;
 }
 .sc-image img {
-  max-width: 1600px;
-}
-.sc-image .se-progress-bar {
-  width: 400px;
-  height: 300px;
+  display: block;
+  max-width: 100%;
+  margin: 0px auto;
 }
 .sc-insert-image-tool > input {
-  position: fixed;
-  top: -1000px;
-  left: -1000px;
+  display: none;
 }
 /* subscript */
 .sc-subscript {
@@ -408,11 +433,11 @@
   background: #2E2E2E;
   border-radius: 5px;
 }
-.sc-tool-group {
+.sc-tool-group.sm-layout-horizontal {
   display: inline-block;
   padding-left: 5px;
 }
-.sc-tool-group > * {
+.sc-tool-group.sm-layout-horizontal > * {
   display: inline-block;
   position: relative;
   margin: 5px 2px;
@@ -420,7 +445,7 @@
 /* scroll-pane */
 /* ScrollPane
 -----------------------------------------------------*/
-.sc-scroll-pane {
+.sc-scroll-pane.sm-default-style {
   position: absolute;
   top: 0px;
   bottom: 0px;
@@ -429,35 +454,35 @@
 }
 /* Substance scrollbar active */
 /* Make space for Substance Scrollbar on the left side */
-.sc-scroll-pane.sm-substance-scrollbar.sm-scrollbar-position-left .se-scrollable {
+.sc-scroll-pane.sm-default-style.sm-substance-scrollbar.sm-scrollbar-position-left .se-scrollable {
   left: 20px;
 }
 /* Patches the scrollbar to stick on the right side */
-.sc-scroll-pane.sm-substance-scrollbar.sm-scrollbar-position-right .sc-scrollbar {
+.sc-scroll-pane.sm-default-style.sm-substance-scrollbar.sm-scrollbar-position-right .sc-scrollbar {
   right: 0px; left: auto;
 }
-.sc-scroll-pane.sm-substance-scrollbar.sm-scrollbar-position-right .sc-scrollbar {
+.sc-scroll-pane.sm-default-style.sm-substance-scrollbar.sm-scrollbar-position-right .se-scrollable {
   right: 20px;
 }
 /* Hide native scroll bar in content panel */
-.sc-scroll-pane.sm-substance-scrollbar .se-scrollable::-webkit-scrollbar {
+.sc-scroll-pane.sm-default-style.sm-substance-scrollbar .se-scrollable::-webkit-scrollbar {
   width: 0px; height: 0px;
 }
-.sc-scroll-pane.sm-substance-scrollbar .se-scrollable::-webkit-scrollbar-thumb {
+.sc-scroll-pane.sm-default-style.sm-substance-scrollbar .se-scrollable::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0);
 }
 /* Hide native scrollbar in Internet Explorer/Edge */
-.sc-scroll-pane.sm-substance-scrollbar .se-scrollable {
+.sc-scroll-pane.sm-default-style.sm-substance-scrollbar .se-scrollable {
   -ms-overflow-style: none;
 }
 /* Firefox-specific hack for hiding the scrollbar */
-.sc-scroll-pane.sm-substance-scrollbar.sm-firefox .se-scrollable {
+.sc-scroll-pane.sm-default-style.sm-substance-scrollbar.sm-firefox .se-scrollable {
   margin-right: -15px;
   overflow-y: scroll;
   overflow-x: hidden;
 }
 /* Patches the scrollbar to stick on the right side */
-.sc-scroll-pane .se-scrollable {
+.sc-scroll-pane.sm-default-style > .se-scrollable {
   position: absolute;
   top: 0px;
   bottom: 0px;
@@ -465,7 +490,7 @@
   right: 0px;
   overflow: auto;
 }
-.sc-scroll-pane .se-content { position: relative; }
+.sc-scroll-pane.sm-default-style > .se-scrollable > .se-content { position: relative; }
 /* For debugging purposes
 .sc-scroll-pane .se-scanline {
   position: absolute;
@@ -513,6 +538,9 @@ Don't grow, don't shrink, use width or height for size determination */
   height: 0px;
   background-color: rgba(0,0,0, 0.2);
 }
+.sc-scrollbar.sm-hide-thumb .se-thumb {
+  visibility: hidden;
+}
 .sc-scrollbar .se-highlight {
   position: absolute;
   width: 100%;
@@ -520,9 +548,9 @@ Don't grow, don't shrink, use width or height for size determination */
 }
 /* layout */
 .sc-layout {
-  padding: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   width: 100%; /* by default takes the full width */
 }
 .sc-layout.sm-no-padding { padding: 0; }
@@ -538,18 +566,18 @@ Don't grow, don't shrink, use width or height for size determination */
   TODO: maybe this should be activated explicitly through a
   Prose component that turns on the text paddings.
 */
-.sc-layout > p { padding-bottom: 20px; }
+.sc-layout > p { margin-bottom: 20px; }
 .sc-layout > h1 {
-  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 .sc-layout > h2 {
-  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 .sc-layout > h3 {
-  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 .sc-layout > h4 {
-  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 /* tabbed-pane */
 .sc-tabbed-pane { position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; }
@@ -567,6 +595,15 @@ Don't grow, don't shrink, use width or height for size determination */
 .sc-tabbed-pane .se-tabs .se-tab:hover { background: #eee; border-bottom: 1px solid #bbb; }
 .sc-tabbed-pane .se-tabs .se-tab.sm-active { background: #eee; border-bottom: 1px solid #444; }
 .sc-tabbed-pane .se-tab-content { position: absolute; top: 40px; left: 0px; right: 0px; bottom: 0px; }
+/* table */
+.sc-table {
+  display: table;
+  width: 100%;
+}
+.sc-table .sc-table-cell {
+  border: 1px solid #ddd;
+  padding: 5px;
+}
 /* grid */
 /* See: http://www.sitepoint.com/understanding-css-grid-systems */
 .sc-grid {}
@@ -645,78 +682,100 @@ Don't grow, don't shrink, use width or height for size determination */
   text-align: center;
 }
 /* isolated-node */
-.sc-isolated-node {}
-.sc-isolated-node > .se-container {
-  display: inline-block;
+.sc-isolated-node {
   position: relative;
 }
-.sc-isolated-node > .se-container > .se-blocker {
-  position: absolute;
-  top:0; bottom: 0; left: 0; right: 0;
-  z-index: 1;
+.sc-isolated-node.sm-default-style.sm-selected {/*background: rgba(163,205,253, 0.6);*/
+  outline: 2px solid;
+  outline-color: #2A8CFF;
 }
-.sc-isolated-node > .se-container > .se-cursor {
+.sc-isolated-node.sm-default-style.sm-co-selected {/*background: rgba(163,205,253, 0.6);*/
+  outline: 2px solid;
+  outline-color: #2A8CFF;
+}
+.sc-isolated-node.sm-default-style.sm-focused {
+  outline: 2px solid;
+  outline-color: #2A8CFF;
+}
+.sc-isolated-node.sm-default-style.sm-co-focused {
+  outline: 2px solid;
+  outline-color: #2A8CFF;
+}
+/* Hide selection fragments when in selected-state */
+.sc-isolated-node.sm-selected ::selection,
+.sc-isolated-node.sm-selected ::selection {
+  background: transparent;
+}
+.sc-isolated-node.sm-selected {
+  background: rgba(163, 205, 253, 0.3);
+  outline: 2px solid #A3CDFD;
+}
+.sc-isolated-node-blocker {
   position: absolute;
-  top: 0; bottom: 0;
+  top: 0px; bottom: 0px; left: 0px; right: 0px;
+  cursor: default;
+}
+.sc-isolated-node.sm-no-blocker .sc-isolated-node-blocker {
+  display: none;
+}
+.sc-isolated-node > .se-bracket {
+  height: 1px;
   width: 1px;
-}
-.sc-isolated-node > .se-container > .se-cursor.sm-before {
-  left: -5px;
-  border-left: 2px solid #A3CDFD;
-}
-.sc-isolated-node > .se-container > .se-cursor.sm-after {
-  right: -5px;
-  border-right: 2px solid #A3CDFD;
-}
-.sc-isolated-node > .se-container.sm-full-width {
-  display: block;
-}
-.sc-isolated-node > .se-slug {
-  /*
-    as we found out in a spike, the only cross-browser compatible
-    way is to use font-size:1px
-  */
-  font-size: 1px;
   opacity: 0;
 }
-.sc-isolated-node.sm-default-style.sm-selected > .se-container {
-  background: rgba(163,205,253, 0.6);
-  outline: 2px solid;
-  outline-color: #A3CDFD;
-}
-.sc-isolated-node.sm-default-style.sm-co-selected > .se-container {
-  background: rgba(163,205,253, 0.6);
-  outline: 2px solid;
-  outline-color: #A3CDFD;
-}
-.sc-isolated-node.sm-default-style.sm-focused > .se-container {
-  outline: 2px solid;
-  outline-color: #A3CDFD;
-}
-.sc-isolated-node.sm-default-style.sm-co-focused > .se-container {
-  outline: 2px solid;
-  outline-color: #A3CDFD;
+.sc-isolated-node.sm-no-blocker > .se-bracket {
+  /*display:none;*/
+  visibility: hidden;
 }
 /* inline-node */
 .sc-inline-node {
   cursor: default;
   /* webkit disables selection for draggable elements */
-  -webkit-user-select: text;
+  /*-webkit-user-select: text;*/
+  position: relative;
 }
-.sc-inline-node > .se-container { position: relative; }
-.sc-inline-node > .se-container > .se-blocker {
-  position: absolute; top:0; bottom: 0; left: 0; right: 0;
-}
-.sc-inline-node > .se-slug { opacity: 0; }
 /* overlay */
-/*
-  This just serves as a container for positioning overlay content
-*/
-.sc-overlay-container { z-index: 200; position: absolute; }
-.sc-overlay-container.sm-hidden { visibility: hidden; position: fixed; }
+.sc-overlay { z-index: 200; position: absolute; }
+.sc-overlay.sm-hidden { visibility: hidden; }
+.sc-overlay.sm-theme-dark {}
+.sc-overlay.sm-theme-dark::before {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 4px 8px 4px;
+  border-color: transparent transparent #2E2E2C transparent;
+}
+.sc-overlay.sm-theme-dark > .se-active-tools {
+  border-radius: 5px;
+  background: #2E2E2C;
+  padding: 5px;
+}
+.sc-overlay.sm-theme-dark > .se-active-tools > .sc-tool-group {
+  display: inline-block;
+}
+.sc-overlay.sm-theme-dark > .se-active-tools > .sc-tool-group > .se-tool {
+  display: inline-block;
+}
 /* gutter */
-.sc-gutter-container { z-index: 200; position: absolute; }
-.sc-gutter-container.sm-hidden { visibility: hidden; position: fixed; }
+.sc-gutter { z-index: 200; position: absolute; }
+.sc-gutter.sm-hidden { visibility: hidden; position: fixed; }
+.sc-gutter.sm-theme-dark::before {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 4px 8px 4px;
+  border-color: transparent transparent #2E2E2C transparent;
+}
+.sc-gutter.sm-theme-dark > .se-active-tools {
+  background: #2E2E2C;
+  padding: 5px;
+}
 /* toc */
 /* TOC
 -----------------------------------------------------*/
@@ -751,12 +810,16 @@ Don't grow, don't shrink, use width or height for size determination */
 .sc-surface *[contenteditable="true"] { cursor: text; }
 // We want Firefox to have a transparent native selection
 ::-moz-selection { background: rgba(77, 149, 233, 0.46); }
-.sm-selected-node { outline: 2px solid; outline-color: #A3CDFD; }
+.sm-selected-node { outline: 2px solid; outline-color: #2A8CFF; }
 .sm-selected-node.sm-collaborator-1 { outline-color: #A4E57A; }
 .sm-selected-node.sm-collaborator-2 { outline-color: #BC90FF; }
 .sm-selected-node.sm-collaborator-3 { outline-color: #D6BB4C; }
 .sm-selected-node.sm-collaborator-4 { outline-color: #BAA6A0; }
 .sm-selected-node.sm-collaborator-5 { outline-color: #7BB5B3; }
+/* spell-check */
+.sc-spell-error {
+  border-bottom: 2px dotted #FB4437;
+}
 /* text-property */
 .sc-text-property { white-space: pre-wrap; }
 .sc-text-property .se-cursor { position: relative; }
