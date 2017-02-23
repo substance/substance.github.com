@@ -1,11 +1,10 @@
 <html>
 <head>
-  <script type="text/javascript" src="substance/substance.js"></script>
   <script type="text/javascript" src="substance-forms.js"></script>
 
   <style>
-    @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
-    @import 'substance/substance-reset.css';
+    @import url('lib/font-awesome/css/font-awesome.min.css');
+    @import 'substance-reset.css';
     @import 'substance-forms.css';
 
     body {
@@ -32,6 +31,10 @@
     .intro {
       padding-bottom: 20px;
       font-size: 18px;
+    }
+
+    .intro > p {
+      padding-bottom: 20px;
     }
 
     .form-section {
@@ -63,7 +66,6 @@
 
     h1, h2, h3 {
       font-weight: 600;
-      margin-bottom: 10px;
       font-family: "Avenir Next", arial, sans-serif;
     }
 
@@ -71,17 +73,17 @@
     h2 { font-size: 20px; }
     h3 { font-size: 16px; }
 
-    p {
-      padding-bottom: 20px;
-    }
-
     b { font-weight: 600; }
     i { font-style: italic; }
 
     .sc-rich-text-area {
       border: 1px solid #ddd;
-      padding: 20px 10px;
+      padding: 0px 20px;
       padding-bottom: 0px;
+    }
+
+    .sc-rich-text-area .sc-container-editor > * {
+      margin: 20px 0;
     }
 
     #submit-button {
@@ -102,13 +104,20 @@
 
   </style>
   <script type="text/javascript">
+    var forms
+    window.addEventListener('load', function() {
+      forms = new SubstanceForms()
+      // Activate richtext areas via API
+      forms.addRichTextArea('survey_motivation', document.getElementById('survey_motivation'))
+      forms.addRichTextArea('survey_cv', document.getElementById('survey_cv'))
+    })
+
     function _onSubmit(e) {
       e.preventDefault()
       e.stopPropagation()
-      let forms = window.substanceForms
-
-      let data = {
+      var data = {
         survey_motivation: forms.getHTML('survey_motivation'),
+        survey_cv: forms.getHTML('survey_cv'),
         survey_name: document.getElementById('survey_name').value,
         survey_recommend: document.querySelector('input[name="survey_recommend"]:checked').value
       }
@@ -121,18 +130,44 @@
   <div class="page">
     <div class="title">Substance Forms</div>
     <div class="intro">
-      Substance Forms is a <a href="http://github.com/substance/forms">JavaScript library</a>
-      you can use to create better web forms. You can mark areas of the page as
-      editable and access the contents with a simple JavaScript API.
+      <p>
+        Substance Forms is a <a href="http://github.com/substance/forms">JavaScript library</a>
+        you can use to create better web forms. You can mark areas of the page as
+        editable and access the contents with a simple JavaScript API.
+      </p>
+      <p>
+        Below is an example for basic usage. For advanced usage see the <a href="comments.html">comments example</a>.
+      </p>
     </div>
     <form id="submission" onsubmit="_onSubmit(event)">
       <div class="form-section">
         <div class="form-heading">What brought you here?</div>
         <div class="form-hint">
-          The following field is a Substance rich text editor, that produces clean annotated HTML.
+          The following field is a Substance rich text editor. It produces clean annotated HTML.
         </div>
         <div id="survey_motivation" editable data-type="area">
           <p>Tell us <strong>why</strong> you are here (<em>200-1000 words</em>).</p>
+          <p>You can also use lists:</p>
+          <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="form-heading">Can you provide a short tabular CV?</div>
+        <div class="form-hint">
+          This is another rich text field.
+        </div>
+        <div id="survey_cv" editable data-type="area">
+          <p>Here is my CV:</p>
+          <table>
+            <tbody>
+              <tr><td>A</td><td>B</td><td>C</td></tr>
+              <tr><td>A</td><td>B</td><td>C</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
