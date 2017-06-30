@@ -201,7 +201,7 @@ body .site-header {
 
 body {
   font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Arial", sans-serif;
-  background: #282B35;
+  background: rgba(0,0,0,0.9); /* #282B35; */
   // Overrides demo styles
   padding: 0px;
   overflow: visible;
