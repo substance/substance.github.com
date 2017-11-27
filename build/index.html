@@ -1,8 +1,48 @@
-<Partial src="layouts/default" title="Substance">
-  <div class="limiter" style="padding-bottom: 50px; overflow: hidden;">
-    <iframe src="https://player.vimeo.com/video/182473294" style="width: 100%; height: 430px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Substance</title>
+  <!-- FIXME: There was some Jekyll helper doing
+      if page.excerpt:
+        page.excerpt | strip_html | strip_newlines | truncate: 160
+      else
+        site.description
+      endif
+  <meta name="description" content="...">
+  -->
+  <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Josefin+Sans:400,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/substance.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/jquery-2.1.3.min.js"></script>
+</head>
 
-    <p style="color: rgba(255,255,255, 0.8); padding-top: 20px;"><em>Current Release: <a href={{"https://github.com/substance/substance/releases/tag/v" + site.substance_version }} style="border-bottom: 1px solid white; color: white;" target="_blank">{{ site.substance_version }}</a></em></p>
+
+  <body>
+    <div class="site-header">
+  <div class="limiter">
+    <div class="substance-header">
+      <div class="substance-logo"><a href="/"><img src="/images/substance-logo.svg" height="30"></a></div>
+      <div class="navigation">
+        <a class="nav-item" href="/texture">Texture</a>
+        <a class="nav-item" href="/examples">Examples</a>
+        <a class="nav-item" target="_blank" href="http://substance.io/docs">Docs</a>
+        <a class="nav-item" target="_blank" href="http://github.com/substance/substance">Github</a>
+      </div>
+    </div>
+    <p class="intro">A <a href="http://github.com/substance/substance">JavaScript library</a> for web-based content editing.</p>
+  </div>
+</div>
+
+    <div class="page-content">
+      
+  <div class="limiter" style="padding-bottom: 50px; overflow: hidden;">
+    <iframe src="https://player.vimeo.com/video/182473294" style="width: 100%; height: 430px;" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe>
+
+    <p style="color: rgba(255,255,255, 0.8); padding-top: 20px;"><em>Current Release: <a href="https://github.com/substance/substance/releases/tag/v1.0.0-beta.6" style="border-bottom: 1px solid white; color: white;" target="_blank">1.0.0-beta.6</a></em></p>
   </div>
   <div class="home">
     <div class="limiter">
@@ -31,7 +71,7 @@
           <a href="http://stenci.la">Stencila</a> is a platform for creating documents that are driven by data. Stencila Stencils are much like traditional templates for embedding data analysis and presentation code but designed to also play friendly with WYSIWYG editing - think RMarkdown meets Jade meets Google Docs. <a href="https://stenci.la/stencila/blog/introducing-sheets/spreadsheets-are-dead-long-live-reactive-programming-environments-">Stencila Sheets</a> are much like traditional spreadsheets but with cells that are expressions in the host language (i.e. R or Python or ...) and with a bunch of other characteristics that make them fit in with modern software practices - think R meets Google Sheets meets git.
         </div>
         <div class="image">
-          <a target="_blank" href="https://stenci.la/nokome/examples/simple-sheet/"><img src="images/stencila.gif"/></a>
+          <a target="_blank" href="https://stenci.la/nokome/examples/simple-sheet/"><img src="images/stencila.gif"></a>
         </div>
       </div>
 
@@ -41,7 +81,7 @@
           Together with <a href="http://elifesciences.org">eLife</a>, Substance is developing <strong>Lens</strong>, an open source toolkit around scientific content. In June 2013 eLife launched the original <a href="http://elifesciences.org/elife-news/lens">Lens Reader</a>, which provides a novel way of looking at content on the web.
         </div>
         <div class="image">
-          <a href="http://lens.elifesciences.org/02726/#figures/figure_4" target="_blank"><img src="images/lens.png"/></a>
+          <a href="http://lens.elifesciences.org/02726/#figures/figure_4" target="_blank"><img src="images/lens.png"></a>
         </div>
       </div>
 
@@ -51,7 +91,7 @@
           <a href="https://medium.com/@_daniel/publish-interactive-historical-documents-with-archivist-7019f6408ee6">Archivist</a> is a new platform used by researchers at <a href="http://www.memorial.de/index.php?id=18" target="_blank">International Society Memorial</a>. They are creating an archive of interview transcriptions related to the topic of <a href="https://en.wikipedia.org/wiki/Ost-Arbeiter" target="_blank">Ost-Arbeiters</a> and WWII POWs. Using Archivist they associate words and passages with an ontology of subject terms, locations, persons and definitions. Later they are able to examine that data and find relevant text passages easily.
         </div>
         <div class="image">
-          <a href="http://archive.tastorona.su/documents/554e7662f10c3c030049f7ee#contextId=source;time=01:43:28" target="_blank"><img src="images/archivist.png"/></a>
+          <a href="http://archive.tastorona.su/documents/554e7662f10c3c030049f7ee#contextId=source;time=01:43:28" target="_blank"><img src="images/archivist.png"></a>
         </div>
       </div>
 
@@ -135,28 +175,59 @@
         </div>
       </div>
 
-      <h3 id='consortium'>Work with us</h3>
+      <h3 id="consortium">Work with us</h3>
       <p>
         As experts in web-based publishing we are offering custom integrations of the Substance platform. These can either be scoped prototyping projects or long-term contracts including a fixed monthly time-budget for custom development. You are invited to join the <a href="/consortium">Substance Consortium</a>, which we created to coordinate community efforts. Don't hesitate to contact us if you have any questions.
       </p>
 
 
       <div class="partners-supporters">
-        <a href="http://coko.foundation"><img width="192" src="images/logos/coko-logo.png"/></a><!--
-        --><a href="https://www.shuttleworthfoundation.org"><img width="192" src="images/logos/shuttleworth-logo.png"/></a><!--
-        --><a href="http://stenci.la"><img width="192" src="images/logos/stencila-logo.png"/></a><!--
-        --><a href="http://www.infomaker.se"><img width="192" src="images/logos/infomaker-logo.png"/></a><!--
-        --><a href="https://elifesciences.org"><img width="192" src="images/logos/elife-logo.png"/></a><!--
-        --><a href="http://erudit.org"><img width="192" src="images/logos/erudit-logo.png"/></a><!--
-        --><a href="http://scielo.org"><img width="192" src="images/logos/scielo-logo.png"/></a><!--
-        --><a href="https://pkp.sfu.ca"><img width="192" src="images/logos/pkp-logo.png"/></a><!--
-        --><a href="http://highwire.org"><img width="192" src="images/logos/highwire-logo.png"/></a><!--
+        <a href="http://coko.foundation"><img width="192" src="images/logos/coko-logo.png"></a><!--
+        --><a href="https://www.shuttleworthfoundation.org"><img width="192" src="images/logos/shuttleworth-logo.png"></a><!--
+        --><a href="http://stenci.la"><img width="192" src="images/logos/stencila-logo.png"></a><!--
+        --><a href="http://www.infomaker.se"><img width="192" src="images/logos/infomaker-logo.png"></a><!--
+        --><a href="https://elifesciences.org"><img width="192" src="images/logos/elife-logo.png"></a><!--
+        --><a href="http://erudit.org"><img width="192" src="images/logos/erudit-logo.png"></a><!--
+        --><a href="http://scielo.org"><img width="192" src="images/logos/scielo-logo.png"></a><!--
+        --><a href="https://pkp.sfu.ca"><img width="192" src="images/logos/pkp-logo.png"></a><!--
+        --><a href="http://highwire.org"><img width="192" src="images/logos/highwire-logo.png"></a><!--
         --><!--<a href="http://www.ams.org/home/page"><img width="192" src="images/logos/ams-logo.png"/></a>--><!--
-        --><a href="http://www.cdlib.org/services/uc3/index.html"><img width="192" src="images/logos/uc3-logo.png"/></a>
+        --><a href="http://www.cdlib.org/services/uc3/index.html"><img width="192" src="images/logos/uc3-logo.png"></a>
       </div>
       <p class="small center">
-        <br/>Partners and supporters
+        <br>Partners and supporters
       </p>
     </div><!-- end limiter -->
   </div>
-</Partial>
+
+    </div>
+    <div class="site-footer">
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-47090679-1', 'substance.io');
+    ga('send', 'pageview');
+  </script>
+  <div class="limiter">
+    <!-- <h3>Contact</h3> -->
+    <p>
+      Substance Software GmbH<br>
+      Harrachstrasse 28<br>
+      4020 Linz, Austria<br>
+      <a href="mailto:info@substance.io">info@substance.io</a>
+    </p>
+    <p>
+      Substance Software GmbH is registered in Linz, No. FN 408728x<br>
+      VAT Reg.No.: ATU68395257
+    </p>
+    <p>
+      Find us on <a href="http://twitter.com/_substance">Twitter</a> and <a href="http://github.com/substance">Github</a>.
+    </p>
+    <p><a href="/tos">Terms</a> + <a href="/privacy">Privacy</a> &#xA9; Substance </p>
+  </div>
+</div>
+  </body>
+</html>
+
