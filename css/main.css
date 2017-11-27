@@ -1,8 +1,4 @@
----
-# Only the main Sass file needs front matter (the dashes are enough)
----
 @charset "utf-8";
-
 
 /* Page Layout
 -------------------------------------------------- */
@@ -16,12 +12,11 @@ h2 {
 ul {
   margin: 0px;
   padding-bottom: 20px;
-
-  li {
-    padding-bottom: 10px;
-  }
 }
 
+ul li {
+  padding-bottom: 10px;
+}
 
 p {
   padding-bottom: 20px;
@@ -41,90 +36,86 @@ body .limiter {
 .site-footer {
   padding: 50px 0;
   color: rgba(255,255,255,0.7);
+}
 
-  a {
-    color: white;
+.site-footer a {
+  color: white;
+}
 
-    &:hover {
-      border-bottom: 1px solid #fff;
-    }
-  }
+.site-footer a:hover {
+  border-bottom: 1px solid #fff;
 }
 
 body .site-header {
   padding-top: 30px;
   padding-bottom: 40px;
-
   color: rgba(255, 255, 255, 0.7);
+}
 
-  a {
-    color: #fff;
-  }
+body .site-header  a {
+  color: #fff;
+}
 
-  .substance-header {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
+body .site-header .substance-header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
 
+body .site-header .substance-header .substance-logo {
+  padding-right: 20px;
+  font-size: 40px;
+  font-family: 'Avenir Next', Helvetica, Arial;
+  font-weight: 500;
+}
 
-    .substance-logo {
-      padding-right: 20px;
-      font-size: 40px;
-      font-family: 'Avenir Next', Helvetica, Arial;
-      font-weight: 500;
-    }
+/* Large */
+body .site-header .substance-header .navigation {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}
 
+body .site-header .substance-header .navigation .nav-item {
+  font-size: 15px;
+  font-weight: 700;
+  margin-right: 10px;
+  border-bottom: 1px solid transparent;
+}
 
-    /* Large */
-    .navigation {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: flex-end;
-      .nav-item {
-        font-size: 15px;
-        font-weight: 700;
-        margin-right: 10px;
-        border-bottom: 1px solid transparent;
+body .site-header .substance-header .navigation .nav-item:hover {
+  border-bottom: 1px solid #fff;
+}
 
-        &:hover {
-          border-bottom: 1px solid #fff;
-        }
-      }
-    }
-  }
+body .site-header .substance-header .intro {
+  padding: 30px 0;
+  // text-align: center;
+  // color: rgba(255, 255, 255, 0.7);
+  font-size: 26px;
+}
 
-  .intro {
-    padding: 30px 0;
-    // text-align: center;
-    // color: rgba(255, 255, 255, 0.7);
-    font-size: 26px;
+body .site-header .substance-header .intro a {
+  color: #fff;
+}
 
-    a {
-      color: #fff;
-
-      &:hover {
-        border-bottom: 1px solid #fff;
-      }
-    }
-  }
-
+body .site-header .substance-header .intro a:hover {
+  border-bottom: 1px solid #fff;
 }
 
 
 .editor-info {
   color: rgba(255, 255, 255, 0.7);
   padding-top: 30px;
-
-  a {
-    color: #fff;
-
-    &:hover {
-      border-bottom: 1px solid #fff;
-    }
-  }
 }
 
+.editor-info a {
+  color: #fff;
+}
+
+.editor-info a:hover {
+  border-bottom: 1px solid #fff;
+}
 
 /* Demo styles */
 
@@ -137,10 +128,10 @@ body .site-header {
 
 .project .image {
   margin: 40px 0;
+}
 
-  img {
-    width: 100%;
-  }
+.project .image img {
+  width: 100%;
 }
 
 /* Publications */
@@ -155,26 +146,26 @@ body .site-header {
   // display: flex; align-items: center;
   margin: 50px 0;
   overflow: hidden;
+}
 
-  .name {
-    font-weight: 700;
-  }
+.team-member .name {
+  font-weight: 700;
+}
 
-  .position {
-    color: #999;
-    padding-left: 10px;
-  }
+.team-member .position {
+  color: #999;
+  padding-left: 10px;
+}
 
-  .image {
-    float: right;
-    width: 100px;
-    padding: 10px;
+.team-member .image {
+  float: right;
+  width: 100px;
+  padding: 10px;
+}
 
-    img {
-      border-radius: 50%;
-      width: 100%;
-    }
-  }
+.team-member .image img {
+  border-radius: 50%;
+  width: 100%;
 }
 
 .container { display: flex; align-items: flex-start; }
@@ -182,7 +173,6 @@ body .site-header {
 
 // Mobile-tweaks for the better Substance
 @media all and (max-width: 640px) {
-
 
   .project {
     flex-direction: column;
@@ -221,10 +211,10 @@ body {
   border: 1px solid #ddd;
   margin-top: 10px;
   margin-bottom: 10px;
+}
 
-  img {
-    width: 100%;
-  }
+.screencap img {
+  width: 100%;
 }
 
 .partners-supporters {
@@ -232,6 +222,7 @@ body {
   overflow: hidden;
   text-align: center;
 }
+
 .partners-supporters > a {
   display: inline-block;
 }
