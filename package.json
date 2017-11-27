@@ -11,6 +11,7 @@
     "url": "git+https://github.com/substance/substance.github.com.git"
   },
   "devDependencies": {
-    "substance-bundler": "^0.19.2"
+    "substance-bundler": "^0.19.2",
+    "substance-pages": "0.1.0"
   }
 }
