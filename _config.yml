@@ -1,7 +1,7 @@
 # Site settings
 title: Substance
 substance_version: "1.0.0-beta.6"
-texture_version: "1.0.0"
+texture_version: "1.0"
 email: info@substance.io
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://substance.io" # the base hostname & protocol for your site
