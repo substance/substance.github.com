@@ -71,7 +71,7 @@ body .site-header {
     .substance-logo {
       padding-right: 20px;
       font-size: 40px;
-      font-family: 'Avenir Next', Helvetica, Arial;
+      font-family: 'Lato', Helvetica, Arial;
       font-weight: 500;
     }
 
@@ -200,7 +200,7 @@ body .site-header {
 }
 
 body {
-  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Arial", sans-serif;
+  font-family: 'Lato', sans-serif;
   background: rgba(0,0,0,0.9); /* #282B35; */
   // Overrides demo styles
   padding: 0px;
@@ -264,4 +264,66 @@ body {
   left: auto;
   right: auto;
   overflow: visible;
+}
+
+
+/* Texture page */
+.texture-header {
+  color: #fff!important;
+  padding-bottom: 10px!important;
+}
+.texture-header .title {
+  font-size: 48px;
+  text-align: center;
+}
+
+.texture-header .intro {
+  font-size: 28px;
+  text-align: center;
+  padding: 0!important;
+}
+
+.texture-version {
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+}
+
+.texture-home h3 {
+  font-size: 36px;
+  line-height: 46px;
+  text-align: center;
+  padding: 30px 0 20px;
+}
+
+.e2e-steps {
+  display: flex;
+  flex-flow: row nowrap;
+  height: 100%;
+  padding: 40px 0 10px;
+}
+
+.e2e-steps > .step {
+  background: #F5F5F5;
+  width: 40%;
+  height: 250px;
+  margin: 5px;
+  padding: 20px 10px;
+  border-radius: 15px;
+}
+
+.e2e-steps > .step > .title {
+  color: #000;
+  font-size: 16px;
+}
+
+.e2e-steps > .step > .separator {
+  background: #D8D8D8;
+  width: 100px;
+  height: 4px;
+  margin: 10px 0;
+}
+
+.e2e-steps > .step > .content {
+  color: #4D4D4D;
+  font-size: 14px;
 }
