@@ -266,21 +266,21 @@ body {
   overflow: visible;
 }
 
-
 /* Texture page */
 .texture-header {
   color: #fff!important;
   padding-bottom: 10px!important;
-}
-.texture-header .title {
-  font-size: 48px;
-  text-align: center;
-}
 
-.texture-header .intro {
-  font-size: 28px;
-  text-align: center;
-  padding: 0!important;
+  .title {
+    font-size: 48px;
+    text-align: center;
+  }
+
+  .intro {
+    font-size: 28px;
+    text-align: center;
+    padding: 0!important;
+  }
 }
 
 .texture-version {
@@ -300,30 +300,89 @@ body {
   flex-flow: row nowrap;
   height: 100%;
   padding: 40px 0 10px;
+
+  .step {
+    background: #F5F5F5;
+    width: 40%;
+    height: 250px;
+    margin: 5px;
+    padding: 20px 10px;
+    border-radius: 15px;
+
+    .title {
+      color: #000;
+      font-size: 16px;
+    }
+
+    .separator {
+      background: #D8D8D8;
+      width: 100px;
+      height: 4px;
+      margin: 10px 0;
+    }
+
+    .content {
+      color: #4D4D4D;
+      font-size: 14px;
+    }
+  }
 }
 
-.e2e-steps > .step {
-  background: #F5F5F5;
-  width: 40%;
-  height: 250px;
-  margin: 5px;
-  padding: 20px 10px;
-  border-radius: 15px;
+.download-texture {
+  display: flex;
+  margin: 0 80px 40px;
+
+  input {
+    background-color: #fff;
+    border: 1px solid #d1d1d1;
+    border-radius: 6px;
+    box-shadow: none;
+    box-sizing: inherit;
+    height: 50px;
+    padding: .6rem 1.0rem;
+    flex-grow: 1;
+
+    &::placeholder {
+      text-align: center;
+    }
+  }
+
+  button {
+    height: 50px;
+    color: #000;
+    background: #0ADCAD;
+    text-align: center;
+    border-radius: 6px;
+    padding: 0 20px;
+    margin-left: 10px;
+  }
 }
 
-.e2e-steps > .step > .title {
-  color: #000;
-  font-size: 16px;
-}
+@media all and (max-width: 640px) {
+  body .texture-header .substance-header {
+    justify-content: center;
+  }
 
-.e2e-steps > .step > .separator {
-  background: #D8D8D8;
-  width: 100px;
-  height: 4px;
-  margin: 10px 0;
-}
+  .navigation {
+    margin-top: 0px;
+    margin-bottom: 30px;
+  }
 
-.e2e-steps > .step > .content {
-  color: #4D4D4D;
-  font-size: 14px;
+  .download-texture {
+    display: block;
+
+    input, button {
+      width: 100%;
+      margin: 10px 0;
+    } 
+  }
+
+  .e2e-steps {
+    display: block;
+
+    .step {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
