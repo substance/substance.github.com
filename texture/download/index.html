@@ -18,11 +18,11 @@ title: Download Texture
       </div>
       <div class="field">
         <label>Your name</label>
-        <input required type="text" name="name" placeholder="Please enter your name">
+        <input type="text" name="name" placeholder="Please enter your name">
       </div>
       <div class="field">
         <label>Institution</label>
-        <input required type="text" name="institution" placeholder="Please enter your institution">
+        <input type="text" name="institution" placeholder="Please enter your institution">
       </div>
       <button id="submit" type="submit">Download Texture for free</button>
     </form>
@@ -62,12 +62,16 @@ title: Download Texture
         $('.step-2, .step-3').hide()
         $('.step-1').show()
     }
-    $('#submit').on('click', function () {
+    $('#submit').on('click', function (e) {
+      e.preventDefault()
       $.ajax({
-        url: '/',
+        url: 'https://guarded-coast-52546.herokuapp.com',
         type: 'POST',
         dataType: 'json',
-        data: $('#texture-download').serialize(),
+        data: $('#texture-download').serializeArray().reduce((res, i) => { 
+          res[i.name] = i.value
+          return res
+        }, {}),
         success: function (result) {
           $('.step-1, .step-3').hide()
           $('.step-2').show()
