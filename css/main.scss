@@ -286,6 +286,7 @@ body {
 .texture-version {
   color: rgba(255,255,255,0.7);
   text-align: center;
+  margin: 30px 0 20px;
 }
 
 .texture-home h3 {
@@ -329,32 +330,81 @@ body {
 }
 
 .download-texture {
-  display: flex;
-  margin: 0 80px 40px;
+  display: block;
+  text-align: center;
 
-  input {
-    background-color: #fff;
-    border: 1px solid #d1d1d1;
-    border-radius: 6px;
-    box-shadow: none;
-    box-sizing: inherit;
-    height: 50px;
-    padding: .6rem 1.0rem;
-    flex-grow: 1;
-
-    &::placeholder {
-      text-align: center;
-    }
-  }
-
-  button {
-    height: 50px;
+  a.button {
+    display: inline-block;
+    height: 54px;
     color: #000;
     background: #0ADCAD;
     text-align: center;
     border-radius: 6px;
-    padding: 0 20px;
-    margin-left: 10px;
+    padding: 20px;
+    font-weight: normal;
+    line-height: 1;
+  } 
+}
+
+/* Download Texture page */
+body.clean {
+  background: #fff;
+
+  .limiter {
+    padding: 40px;
+    max-width: 600px;
+  }
+
+  .texture-header {
+    color: #000!important;
+
+    .title {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .intro {
+      font-size: 16px;
+      text-align: left;
+    }
+  }
+  form {
+    .field {
+      margin: 10px 0 20px;
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      input {
+        display: block;
+        width: 100%;
+        background-color: #E8E8E8;
+        border: none;
+        border-radius: 6px;
+        box-shadow: none;
+        box-sizing: inherit;
+        padding: .5rem;
+      }
+    }
+
+    button {
+      display: block;
+      color: #fff;
+      background: #000;
+      text-align: center;
+      border-radius: 6px;
+      padding: 10px 20px;
+      font-weight: normal;
+      line-height: 1;
+      margin: 30px auto 20px;
+    }
+  }
+  
+  .privacy {
+    font-size: 12px;
+    text-align: center;
   }
 }
 
@@ -366,15 +416,6 @@ body {
   .navigation {
     margin-top: 0px;
     margin-bottom: 30px;
-  }
-
-  .download-texture {
-    display: block;
-
-    input, button {
-      width: 100%;
-      margin: 10px 0;
-    } 
   }
 
   .e2e-steps {
