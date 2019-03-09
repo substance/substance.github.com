@@ -4,26 +4,78 @@ title: Download Texture
 ---
 
 <div class="limiter">
-  <div class="texture-header">
-    <div class="title">Download Texture</div>
-    <div class="intro">
-      Please enter your name and email address - we will send you download instructions.
+  <div class="step-1">
+    <div class="texture-header">
+      <div class="title">Download Texture</div>
+      <div class="intro">
+        Please enter your name and email address - we will send you download instructions.
+      </div>
     </div>
+    <form id="texture-download">
+      <div class="field">
+        <label>Email address <sup>*</sup></label>
+        <input required type="email" name="email" placeholder="Please enter your email address">
+      </div>
+      <div class="field">
+        <label>Your name</label>
+        <input required type="text" name="name" placeholder="Please enter your name">
+      </div>
+      <div class="field">
+        <label>Institution</label>
+        <input required type="text" name="institution" placeholder="Please enter your institution">
+      </div>
+      <button id="submit" type="submit">Download Texture for free</button>
+    </form>
+    <div class="privacy">🔒 Privacy policy: We will not share any of your data.</div>
   </div>
-  <form>
-    <div class="field">
-      <label>Email address <sup>*</sup></label>
-      <input required type="email" placeholder="Please enter your email address">
+  <div class="step-2">
+    <div class="texture-header">
+      <div class="title">Download Texture</div>
     </div>
-    <div class="field">
-      <label>Your name</label>
-      <input required type="text" placeholder="Please enter your name">
+    <p>Congratulations. You are almost there.</p>
+    <p>1) Check your emails and confirm your email address. Don’t forget to check your Promotions and Spam folders.</p>
+    <p>2) Receive download instructions for Texture.app</p>
+    <p>See you!</p>
+    <p>Michael, Oliver and Daniel</p>
+  </div>
+  <div class="step-3">
+    <div class="texture-header">
+      <div class="title">Enjoy using Texture</div>
     </div>
-    <div class="field">
-      <label>Email address</label>
-      <input required type="text" placeholder="Please enter your institution">
-    </div>
-    <button type="submit">Download Texture for free</button>
-  </form>
-  <div class="privacy">🔒 Privacy policy: We will not share any of your data.</div>
+    <p>Many thanks for choosing Texture. We’ve emailed you download links and installation instructions.</p>
+    <p>See you!</p>
+    <p>Michael, Oliver and Daniel</p>
+  </div>
 </div>
+<script type="text/javascript">
+  $(document).ready(function () {
+    switch (window.location.hash.substr(1)) {
+      case 'sent':
+        $('.step-1, .step-3').hide()
+        $('.step-2').show()
+        break
+      case 'confirmed':
+        $('.step-1, .step-2').hide()
+        $('.step-3').show()
+        break
+      default:
+        $('.step-2, .step-3').hide()
+        $('.step-1').show()
+    }
+    $('#submit').on('click', function () {
+      $.ajax({
+        url: '/',
+        type: 'POST',
+        dataType: 'json',
+        data: $('#texture-download').serialize(),
+        success: function (result) {
+          $('.step-1, .step-3').hide()
+          $('.step-2').show()
+        },
+        error: function (xhr, resp, text) {
+          console.log(xhr, resp, text)
+        }
+      })
+    })
+  })
+</script>
