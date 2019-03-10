@@ -68,10 +68,13 @@ title: Download Texture
         url: 'https://guarded-coast-52546.herokuapp.com',
         type: 'POST',
         dataType: 'json',
-        data: $('#texture-download').serializeArray().reduce((res, i) => { 
-          res[i.name] = i.value
-          return res
-        }, {}),
+        contentType: 'application/json; charset=utf-8',
+        data: JSON.stringify(
+          $('#texture-download').serializeArray().reduce((res, i) => { 
+            res[i.name] = i.value
+            return res
+          }, {})
+        ),
         success: function (result) {
           $('.step-1, .step-3').hide()
           $('.step-2').show()
